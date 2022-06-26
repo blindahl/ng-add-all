@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "cy": "node script.js && cypress -v",
+    "precy2": "node script.js"
+  },
+  "dependencies": {
+    "@angular/cli": "^14.0.3"
+  },
+  "devDependencies": {
+    "cypress": "^10.2.0"
+  }
+}
