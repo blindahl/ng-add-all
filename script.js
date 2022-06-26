@@ -2,6 +2,7 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path")
 
+// Get all files with relative path in an array, recursively relative to dirPath  
 const getAllFiles = function(dirPath, arrayOfFiles) {
   files = fs.readdirSync(dirPath);
 
@@ -18,7 +19,10 @@ const getAllFiles = function(dirPath, arrayOfFiles) {
   return arrayOfFiles;
 }
 
+
 try {
+  // Get all files recursively except for 'all.cy.js', strip 'cypress/e2e/' from the path and 
+  // prefix with importh and separate with newline
   const allFileContent = getAllFiles("./cypress/e2e/")
                           .filter(f => f !== 'all.cy.js')
                           .map(f => f.replace('cypress/e2e/', ''))
